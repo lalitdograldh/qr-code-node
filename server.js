@@ -7,7 +7,7 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 
-app.post("/generate/base64",async(req,res) =>{
+app.get("/api/v1/get-qrcode",async(req,res) =>{
     try{
         const { text } = req.body;
 
@@ -28,7 +28,7 @@ app.post("/generate/base64",async(req,res) =>{
 // ========================================
 // 2️⃣ API: Generate QR Code & Save as PNG
 // ========================================
-app.post("/generate/png", async (req, res) => {
+app.get("/api/v1/get-qrcode-png", async (req, res) => {
   try {
     const { text } = req.body;
 
